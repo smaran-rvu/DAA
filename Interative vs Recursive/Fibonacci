@@ -1,0 +1,19 @@
+def Fibonacci_iterative(n):
+    l = [0,1]
+    if n<=2:
+        return l[:2]
+    else:
+        for i in range(n-2):
+            l.append(l[-1]+l[-2])
+    
+    return l
+
+def Fibonacci_recursive(n):
+    if n <= 1:
+        return n
+    else:
+        return Fibonacci_recursive(n-1) + Fibonacci_recursive(n-2)
+
+n = int(input("Enter your number: "))
+print(Fibonacci_iterative(n)) 
+print(Fibonacci_recursive(n))
