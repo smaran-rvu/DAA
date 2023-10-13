@@ -42,16 +42,22 @@ if c1==r2:
 
         for a in range(r1):
             for b in range(c2):
-                for i in range(r2):
-                    m3[a][b] += m1[a][i]*m2[i][b]
+                sum = 0
+                for i in range(c1):
+                    # m3[a][b] += m1[a][i]*m2[i][b]
+                    sum += m1[a][i]*m2[i][b]
                     mult += 1
                 add+=1
+                m3[a][b] = sum
 
         for row in m3:
             for elem in row:
                 print(elem, end = " ")
             print()
-        print(mult,add)
+        print(mult,mult-add)
     
     else:
         print(-1)
+
+else:
+    print(-1)
