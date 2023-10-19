@@ -14,27 +14,20 @@ def Pivot(l, p, r, pi):
     l[pi], l[i+1] = l[i+1], l[pi]
     return i+1, swaps+1
 
-def Quick_Sort(l,low,high):
-    if low<high:
-        # for i in range(1000000): pass
-        pivot_index = Pivot(l,low,high,0)
-        print(l[low:high+1], low, high, pivot_index)
-        Quick_Sort(l, low, pivot_index-1)
-        Quick_Sort(l, pivot_index+1, high)
-
 n = int(input())
 
 if n==0:
     print(-1)
 
 else:
-    str = input().rstrip()
-    l = str.split(' ')
-    l = [eval(i) for i in l]
-
+    l = [eval(i) for i in input().split()]
+    pi = int(input())
     if n==1:
         print(l[0])
     
     else:
-        Quick_Sort(l, 0, len(l)-1)
-        for i in l: print(i, end = ' ')
+        output = Pivot(l,0,n-1,pi)        
+        print(output[1])
+        for elem in l: print(elem, end = ' ')
+        print()
+        print(output[0])
